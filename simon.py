@@ -141,12 +141,22 @@ def play():
                                                                 time.sleep(1.0)
                                                                 lcd.clear()
                                                                 lcd.message("Sending...")
+                                                                time.sleep(1.0)
+                                                                lcd.clear()
+                                                                print "Sending score to server."
+                                                                r = requests.post("http://arwym.com/gamescores/api/scores", data = {'game_id': 3, 'value': score})
+                                                                print r.text
+                                                                if (r.status_code == 200):
+                                                                        lcd.message("Done!")
+                                                                else:
+                                                                        lcd.message("Failed to send \nscore. Sorry!")
+                                                                time.sleep(2.0)
                                                                 lcd.clear()
                                                                 start()
                                                         if lcd.is_pressed(BUTTONS[4][0]):
                                                                 lcd.clear()
                                                                 lcd.message("OK!\nSee you!")
-                                                                time.sleep(3.0)
+                                                                time.sleep(2.0)
                                                                 lcd.clear()
                                                                 start()
                                                         continue
