@@ -1,4 +1,4 @@
-# RPi-Simon-Says-Game
+# Raspberry Pi 'Simon Says' Game
 
 Python code for a Simon Says game created for the Raspberry Pi. The twist: It is able to submit player scores to a web server.
 
